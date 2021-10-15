@@ -29,6 +29,8 @@ namespace adam_asmaca
         {
             harfPaneli.Controls.Clear();
             alfabePaneli.Controls.Clear();
+            hak = 5;
+            pictureBox1.Image = null;
 
             Random r = new Random();
             int rastgele = r.Next(0, sehirler.Length);
