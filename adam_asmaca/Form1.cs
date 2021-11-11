@@ -19,7 +19,9 @@ namespace adam_asmaca
         string sehir;
 
         int hak = 5;
+        int bulunanHarafSayisi = 0;
 
+        int karakter_sayisi;
         public Form1()
         {
             InitializeComponent();
@@ -46,7 +48,7 @@ namespace adam_asmaca
                 alfabePaneli.Controls.Add(harfButon);
             }
 
-            int karakter_sayisi = sehir.Length;
+            karakter_sayisi = sehir.Length;
             for (int i = 0; i < karakter_sayisi; i++)
             {
                 TextBox txtBox = new TextBox();
@@ -60,19 +62,27 @@ namespace adam_asmaca
 
         private void HarfButon_Click(object sender, EventArgs e)
         {
-            Button harfButon = (Button)sender;
+            Button harfButon = (Button)sender;//tıklanan butonu aldık sender nesnesi onu işaret eder
             harfButon.Enabled = false;
 
-            char harf = harfButon.Text.First();
+            char harf = Convert.ToChar(harfButon.Text);
 
             if (sehir.Contains(harf))
             {
                 harfButon.BackColor = Color.Green;
-
                 for (int i = 0; i < sehir.Length; i++)
                 {
                     if (harf == sehir[i])
+                    {
+                        bulunanHarafSayisi++;
                         harfPaneli.Controls[i].Text = harf.ToString();
+                    }
+                }
+
+                if (bulunanHarafSayisi == karakter_sayisi)
+                {
+                    //btnBasla.Enabled = false;
+                    MessageBox.Show("Tebrikler Kazandınız!");
                 }
 
             }
@@ -107,7 +117,14 @@ namespace adam_asmaca
                     default:
                         break;
                 }
+
+
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
