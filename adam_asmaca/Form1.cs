@@ -27,6 +27,8 @@ namespace adam_asmaca
             InitializeComponent();
         }
 
+        // deneme
+
         private void button1_Click(object sender, EventArgs e)
         {
             harfPaneli.Controls.Clear();
@@ -62,7 +64,12 @@ namespace adam_asmaca
 
         private void HarfButon_Click(object sender, EventArgs e)
         {
-            Button harfButon = (Button)sender;//tıklanan butonu aldık sender nesnesi onu işaret eder
+            Button harfButon = (Button)sender;//tıklanan butonu
+                ////aldık sender nesnesi onu işaret eder
+                ///
+
+
+
             harfButon.Enabled = false;
 
             char harf = Convert.ToChar(harfButon.Text);
