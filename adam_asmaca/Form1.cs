@@ -35,7 +35,7 @@ namespace adam_asmaca
             alfabePaneli.Controls.Clear();
             hak = 5;
             pictureBox1.Image = null;
-
+            //  güncelleme kısmı kodları
             Random r = new Random();
             int rastgele = r.Next(0, sehirler.Length);
             sehir = sehirler[rastgele];
